@@ -10,4 +10,21 @@ CREATE TABLE Dealerships (
 	Phone varchar(12),
     PRIMARY KEY (dealership_id)
  );
+ 
+ CREATE TABLE Vehicles (
+	vin varchar(17) NOT NULL,
+	year int NOT NULL,
+	make_name varchar(30) NOT NULL,
+	model_name varchar(30) NOT NULL,
+	vehicle_type varchar(30) NOT NULL,
+	vehicle_color varchar(30),
+	odometer int NOT NULL,
+	vehicle_price decimal(10,2) NOT NULL,
+	sold varchar(3) NOT NULL,
+	PRIMARY KEY (VIN)
+);
 
+CREATE TABLE Inventory (
+	 Dealership_id int,
+	 VIN varchar(17)
+);
