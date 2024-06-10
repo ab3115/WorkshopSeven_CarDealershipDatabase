@@ -21,10 +21,34 @@ CREATE TABLE Dealerships (
 	odometer int NOT NULL,
 	vehicle_price decimal(10,2) NOT NULL,
 	sold varchar(3) NOT NULL,
-	PRIMARY KEY (VIN)
+	PRIMARY KEY (vin)
 );
 
 CREATE TABLE Inventory (
-	 Dealership_id int,
-	 VIN varchar(17)
+	 dealership_id int,
+	 vin varchar(17)
+);
+
+CREATE TABLE Sales_Contracts (
+	sales_id int NOT NULL auto_increment,
+	contract_date int NOT NULL,
+    customer_name varchar(255) NOT NULL,
+    customer_email varchar(255) NOT NULL,
+    vin varchar(17),
+    finance_option varchar(12) NOT NULL,
+    total_price decimal(10, 2) NOT NULL,
+    monthly_payment decimal(10, 2) NOT NULL,
+	PRIMARY KEY (sales_id)
+);
+
+CREATE TABLE Lease_Contracts (
+	lease_id int NOT NULL auto_increment,
+	contract_date int NOT NULL,
+    customer_name varchar(255) NOT NULL,
+    customer_email varchar(255) NOT NULL,
+    vin int,
+    lease_end_value decimal(10,2) NOT NULL,
+	total_price decimal(10, 2) NOT NULL,
+    monthly_payment decimal(10, 2) NOT NULL,
+    PRIMARY KEY (lease_id)
 );
